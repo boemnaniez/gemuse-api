@@ -11,8 +11,18 @@ document.getElementById("send").addEventListener("click", async () => {
   const label = document.getElementById("label").value.trim();
   const serviceUrl = document.getElementById("service-url").value.trim().replace(/\/$/, "");
   if (!label) { msg.textContent = "Isi label akun dulu."; return; }
-  if (!serviceUrl.startsWith("http://127.0.0.1") && !serviceUrl.startsWith("http://localhost")) {
-    msg.textContent = "Demi keamanan, service URL harus server lokal (127.0.0.1 / localhost).";
+  // Service URL yang diizinkan: server lokal, atau Codespaces milikmu sendiri.
+  // Codespaces: https://<nama>-8787.app.github.dev (tanpa /dashboard di akhir).
+  // URL lain ditolak, supaya cookie tidak terkirim ke server orang lain.
+  const isLocal = serviceUrl.startsWith("http://127.0.0.1") || serviceUrl.startsWith("http://localhost");
+  let codespacesHost = false;
+  try {
+    const u = new URL(serviceUrl);
+    codespacesHost = u.protocol === "https:" &&
+      (u.hostname.endsWith(".app.github.dev") || u.hostname.endsWith(".github.dev"));
+  } catch { codespacesHost = false; }
+  if (!isLocal && !codespacesHost) {
+    msg.textContent = "Demi keamanan, service URL harus server lokal (127.0.0.1 / localhost) atau Codespaces kamu sendiri (*.app.github.dev).";
     return;
   }
   msg.textContent = "Membaca cookie…";

@@ -18,9 +18,10 @@
 <label>Label akun
   <input id="label" type="text" placeholder="contoh: Akun 1">
 </label>
-<label>Service URL server lokal
+<label>Service URL server (lokal / Codespaces)
   <input id="service-url" type="text" value="http://127.0.0.1:8787">
 </label>
+<p class="warn">Lokal: http://127.0.0.1:8787 — Codespaces: https://&lt;nama&gt;-8787.app.github.dev (tanpa /dashboard).</p>
 <button id="send" type="button">Ambil Cookie &amp; Kirim ke Server</button>
 <p id="msg"></p>
 <p class="warn">Cookie adalah kunci login. Hanya kirim ke server lokal milikmu sendiri — jangan ke URL orang lain.</p>

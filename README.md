@@ -90,8 +90,14 @@ python3 -m unittest discover -s tests -v
 1. Buka `chrome://extensions`, aktifkan **Developer mode**.
 2. Klik **Load unpacked**, pilih folder `extension/` di repo ini.
 3. Login ke **muse.ai** di Chrome.
-4. Klik ikon extension GemuseAPI, isi **label akun** dan **service URL**
-   (`http://127.0.0.1:8787`), klik **Ambil Cookie & Kirim ke Server**.
+4. Klik ikon extension GemuseAPI, isi **label akun** dan **service URL**,
+   klik **Ambil Cookie & Kirim ke Server**.
+   - Server di laptop sendiri: `http://127.0.0.1:8787`
+   - Server di Codespaces: `https://<nama>-8787.app.github.dev`
+     (alamat yang sama dengan dashboard, **tanpa** `/dashboard` di akhir;
+     contoh punyamu: `https://obscure-waffle-5vpq54gg5p97fvw9-8787.app.github.dev`).
+     Extension hanya mau kirim ke localhost atau `*.app.github.dev` /
+     `*.github.dev` milikmu sendiri — URL lain ditolak.
 5. Akun muncul di dashboard dengan kuotanya.
 
 Extension membaca cookie ini dari `muse.ai` (nama dari repo sejenis,
