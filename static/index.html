@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GemuseAPI — Dashboard Pool Akun Muse AI</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1>🪣 GemuseAPI</h1>
+  <p class="subtitle">Satu dashboard untuk banyak akun Muse AI — kuota, rotasi, dan video dalam satu tempat.</p>
+  <p id="health" class="health">Memuat status server…</p>
+</header>
+
+<main>
+  <section>
+    <h2>Akun di Pool</h2>
+    <p id="accounts-empty" class="muted">Belum ada akun. Tambah akun di bawah.</p>
+    <div id="accounts"></div>
+  </section>
+
+  <section>
+    <h2>Tambah Akun</h2>
+    <form id="add-account-form">
+      <label>Label akun
+        <input name="label" type="text" placeholder="contoh: Akun 1" required>
+      </label>
+      <label>Service URL (opsional, dari dashboard — lihat extension)
+        <input name="service_url" type="text" placeholder="http://127.0.0.1:8787">
+      </label>
+      <label>Cookies — tempel JSON dict, raw header <code>nama=nilai; nama2=nilai2</code>, atau JSON EditThisCookie
+        <textarea name="cookies" rows="4" placeholder='{"hatch_sess": "...", "hatch_gw": "..."}' required></textarea>
+      </label>
+      <p class="muted">⚠️ Cookie adalah kunci login akunmu. Jangan dibagikan ke orang lain dan jangan ditempel di tempat publik.</p>
+      <button type="submit">Tambah Akun</button>
+    </form>
+    <p id="add-account-msg" class="msg"></p>
+  </section>
+
+  <section>
+    <h2>Buat Video</h2>
+    <form id="create-video-form">
+      <label>Prompt
+        <textarea name="prompt" rows="3" placeholder="Contoh: Sopir angkot menyelamatkan anak kecil yang mengejar bola…" required></textarea>
+      </label>
+      <label>Rasio
+        <select name="aspect_ratio">
+          <option value="9:16">9:16 — vertikal (Shorts / Reels)</option>
+          <option value="16:9">16:9 — landscape</option>
+          <option value="1:1">1:1 — persegi</option>
+        </select>
+      </label>
+      <button type="submit">Buat Video</button>
+    </form>
+    <p id="create-video-msg" class="msg"></p>
+    <p class="muted">Driver <code>mock</code> hanya membuat file placeholder untuk pengujian. Video beneran butuh driver browser (belum diimplementasikan).</p>
+  </section>
+
+  <section>
+    <h2>Job Video</h2>
+    <button id="refresh-btn" type="button">Muat Ulang</button>
+    <div id="jobs"></div>
+  </section>
+
+  <section>
+    <h2>Media</h2>
+    <ul id="media"></ul>
+  </section>
+</main>
+
+<footer>
+  <p class="muted">GemuseAPI — proyek tidak resmi, bukan produk Meta. Gunakan akunmu sendiri, atas risikomu sendiri.</p>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

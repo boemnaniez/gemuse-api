@@ -1,0 +1,21 @@
+# Data lokal — BERISI COOKIE LOGIN, jangan pernah di-commit!
+data/accounts.json
+data/jobs.json
+data/media/
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Env
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

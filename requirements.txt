@@ -1,0 +1,5 @@
+# GemuseAPI — stdlib only, tidak ada dependensi.
+# File ini sengaja kosong: server, pool, driver, dan tes semuanya
+# memakai Python standard library saja (http.server, json, unittest,
+# threading, dll). Tidak perlu `pip install` apa pun.
+# Cukup: python3 server.py

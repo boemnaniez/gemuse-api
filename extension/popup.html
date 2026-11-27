@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>GemuseAPI — Ambil Cookie</title>
+<style>
+  body { width: 320px; font-family: system-ui, sans-serif; padding: 12px; }
+  label { display: block; margin: 10px 0; font-weight: 600; }
+  input { display: block; width: 100%; margin-top: 4px; padding: 8px; box-sizing: border-box; }
+  button { background: #2563eb; color: #fff; border: 0; border-radius: 8px; padding: 10px; width: 100%; cursor: pointer; }
+  #msg { color: #166534; margin-top: 10px; }
+  .warn { color: #991b1b; font-size: 12px; }
+</style>
+</head>
+<body>
+<h2>GemuseAPI</h2>
+<p>Login dulu ke <strong>muse.ai</strong> di tab browser ini, lalu isi form dan klik kirim.</p>
+<label>Label akun
+  <input id="label" type="text" placeholder="contoh: Akun 1">
+</label>
+<label>Service URL server lokal
+  <input id="service-url" type="text" value="http://127.0.0.1:8787">
+</label>
+<button id="send" type="button">Ambil Cookie &amp; Kirim ke Server</button>
+<p id="msg"></p>
+<p class="warn">Cookie adalah kunci login. Hanya kirim ke server lokal milikmu sendiri — jangan ke URL orang lain.</p>
+<script src="popup.js"></script>
+</body>
+</html>

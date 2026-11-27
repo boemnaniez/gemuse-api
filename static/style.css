@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; margin: 0; background: #0f172a; color: #e2e8f0; }
+header, main, footer { max-width: 860px; margin: 0 auto; padding: 16px; }
+header h1 { margin: 0 0 4px; }
+.subtitle { color: #94a3b8; margin: 0 0 8px; }
+.health { background: #1e293b; padding: 8px 12px; border-radius: 8px; }
+section { background: #1e293b; border-radius: 12px; padding: 16px; margin: 16px 0; }
+h2 { margin-top: 0; }
+label { display: block; margin: 12px 0; font-weight: 600; }
+input, textarea, select { display: block; width: 100%; margin-top: 6px; padding: 10px; border-radius: 8px; border: 1px solid #475569; background: #0f172a; color: #e2e8f0; }
+button { background: #2563eb; color: #fff; border: 0; border-radius: 8px; padding: 10px 16px; cursor: pointer; margin: 4px 4px 4px 0; }
+button:hover { background: #1d4ed8; }
+.card { border: 1px solid #334155; border-radius: 10px; padding: 12px; margin: 12px 0; background: #0f172a; }
+.card h3 { margin: 0 0 4px; }
+.muted { color: #94a3b8; }
+.msg { color: #86efac; }
+.error { color: #fca5a5; }
+.bar { height: 12px; background: #334155; border-radius: 6px; overflow: hidden; }
+.bar-fill { height: 100%; background: #22c55e; }
+.row { display: flex; flex-wrap: wrap; gap: 4px; }
